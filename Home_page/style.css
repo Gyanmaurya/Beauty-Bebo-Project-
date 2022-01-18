@@ -1,0 +1,111 @@
+body{
+    font-family: "Helvetica Neue", sans-serif;
+}
+#nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: -5px;
+    position: sticky;
+    height: 50px;
+    background-color: #ee29a2;
+}
+#nav>div{
+    margin-top: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color:#fff;
+}
+.arrow{
+    border: 0px;
+    background-color: #ee29a2;
+    color: #fff;
+}
+#image{
+    width: 100%;
+}
+#middle{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+#logo{
+    width: 25%;
+}
+#search{
+    display: flex;
+    width: 55%;
+    height: 35px;
+    margin-top:20px;
+    border :1px solid gray;
+    border-radius: 4px;
+}
+#left{
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+    margin-top: 8px;
+}
+#content{
+    color: rgb(124, 119, 119);
+    font-size: 14px;
+}
+#select{
+    color:rgb(128, 125, 125);
+    border: 0px;
+}
+#line{
+    height: 20px;
+    width: 0px;
+    border: 1px solid rgb(196, 187, 187);
+    margin-top: 8px;
+}
+#right{
+    display: flex;
+    width: 60%;
+    margin-left: 30px;
+    justify-content: space-between;
+    margin-top: 2px;
+}
+#text{
+    border: 0px;
+}
+#icon1{
+    width: 50px;
+    margin-top: -2px;
+    background-color: #ee29a2;
+    color: #fff;
+}
+#icon1 i{
+    width: 50px;
+    height: 100%;
+    margin-left: 15px;
+    margin-top:10px ;
+}
+#account{
+    display: flex;
+    width: 15%;
+    justify-content: space-around;
+    margin-top: 22px;
+}
+#icon2{
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 20px;
+}
+#icon3{
+    border: 1px solid rgb(212, 210, 210);
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 20px;
+}
+#ac{
+    margin: 8px;
+    font-weight: 400;
+}
+
+/*media query for responsive design */
+@media screen and (min-width:{
+    
+}
