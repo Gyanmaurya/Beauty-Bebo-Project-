@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us Beauty Bebo</title>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+
+      .gray {
+        color: gray;
+      }
+
+      #size {
+        font-size: 20px;
+      }
+
+      ul {
+        padding: 0px;
+      }
+
+      #contact {
+        display: flex;
+        justify-content: left;
+      }
+
+      #div1 {
+        width: 30%;
+        padding-right: 4%;
+      }
+
+      #div2 {
+        /* border: 1px solid; */
+        width: 50%;
+      }
+
+      #grayLine {
+        border-top: 1px solid rgb(209, 209, 209);
+        padding: 15px 0px;
+      }
+
+      div > button {
+        color: white;
+        background-color: dimgrey;
+      }
+
+      span > p {
+        padding: 8px;
+        margin: 0px;
+        font-size: 14px;
+      }
+
+      input {
+        padding: 10px;
+        padding-right: 100%;
+      }
+      textarea {
+        padding: 10px;
+        padding-right: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="width: 970px; justify-content: center; border: 1px solid">
+      <div>
+        <h3>CONTACT US</h3>
+      </div>
+      <br />
+      <div id="contact">
+        <div id="div1" class="gray">
+          <p class="contact-description">
+            Makeup has been around for over a hundred thousand years, and beauty
+            is only evolving. What started with red pigment clay is now a
+            fascinating world of foundation, rouge, lipstick, blush, mascara,
+            eye shadow, eye liner, eye caramba! Meet Beautybebo, a powerful
+            concoction of technology and beauty. A portal which delivers the
+            best of both the worlds.
+          </p>
+          <ul class="address-info" id="marginZero">
+            <li class="email-icon">
+              <div id="grayLine">
+                Support:
+                <a title="Send Email" href="">
+                  <span>support@beautybebo.com</span>
+                </a>
+                <br />
+                Sales:
+                <a title="Send Email" href="">
+                  <span>sales@beautybebo.com</span>
+                </a>
+              </div>
+            </li>
+            <li class="phone-icon">
+              <div id="grayLine">
+                Hotline:
+                <a title="Call" href="tel:+91 97799030777">+91 97990 30777</a>
+              </div>
+            </li>
+            <li class="add-icon">
+              <div id="grayLine">
+                Address:
+                <a title="Call" href="#">
+                  21A, Moti nagar west, Vaishali nagar, Jaipur
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div id="div2">
+          <h2>SEND YOUR COMMENTS</h2>
+          <div id="div2">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your Name*"
+              maxlength=""
+            />
+          </div>
+          <br />
+          <div id="div2">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your Email*"
+            />
+          </div>
+          <br />
+          <div id="div2">
+            <input
+              type="text"
+              name="telephone"
+              id="telephone"
+              placeholder="Your Phone*"
+            />
+          </div>
+          <br />
+          <div>
+            <textarea
+              name="comment"
+              id="comment"
+              rows="5"
+              placeholder="Your Message*"
+            >
+            </textarea>
+            <!-- <textarea name="" id="" rows="5"></textar/ea> -->
+          </div>
+          <br />
+          <br />
+          <div>
+            <button type="submit" title="Send Message">
+              <span><p>SEND MESSAGE</p></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
