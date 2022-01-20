@@ -2,27 +2,29 @@ body{
     font-family: "Helvetica Neue", sans-serif;
 }
 #nav{
+    background-color: #ee29a2;
+    text-align: center;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.image{
+    margin-right: 30px;
+}
+#nav ul{
     display: flex;
-    width: 100%;
-    justify-content: space-around;
-    margin-top: -5px;
-    position: sticky;
-    height: 50px;
-    background-color: #ee29a2;
-}
-#nav>div{
-    margin-top: 16px;
-    font-size: 15px;
-    font-weight: 600;
-    color:#fff;
-}
-.arrow{
-    border: 0px;
-    background-color: #ee29a2;
+    justify-content: space-between;
+    list-style-type: none;
     color: #fff;
 }
-#image{
-    width: 100%;
+#nav ul li{
+    margin: 5px;
+    padding: 10px;
+}
+a{
+    color: #fff;
+    text-decoration: none;
 }
 #middle{
     display: flex;
@@ -44,7 +46,8 @@ body{
     display: flex;
     width: 40%;
     justify-content: space-around;
-    margin-top: 8px;
+    box-sizing: border-box;
+    padding: 9px;
 }
 #content{
     color: rgb(124, 119, 119);
@@ -89,23 +92,33 @@ body{
     margin-top: 22px;
 }
 #icon2{
-    border: 1px solid black;
     box-sizing: border-box;
     padding: 5px;
+    height: 35px;
     font-size: 20px;
+    cursor: pointer;
 }
 #icon3{
-    border: 1px solid rgb(212, 210, 210);
     box-sizing: border-box;
     padding: 5px;
+    height: 35px;
+    border: 1px solid rgb(163, 153, 153);
     font-size: 20px;
+    cursor: pointer;
 }
-#ac{
+#ac a{
+    font-size: 18px;
     margin: 8px;
     font-weight: 400;
+    color: black;
+}
+.active,#nav ul li:hover{
+    background-color: rgb(199, 32, 157);
+    border-radius: 5px;
 }
 
+
 /*media query for responsive design */
-@media screen and (min-width:{
+@media screen and (min-width:360px) and (max-width:520px){
     
 }
