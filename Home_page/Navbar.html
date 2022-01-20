@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BeatyBebo Clone</title>
+    <title>Navbar</title>
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="image"><img src="https://www.beautybebo.com/pub/media/ads/ad-desktop.jpg" alt="image1"></div>
+    <div class="image"><img src="https://www.beautybebo.com/pub/media/ads/ad-desktop.jpg" alt="image1"></div>
     <div id="middle">
         <div id="logo">
             <div><img src="https://www.beautybebo.com/pub/media/logo/default/beautybebo_1.png" alt="logo"></div>
@@ -30,21 +30,24 @@
         </div>
 
         <div id="account">
-            <div ><i id="icon2" class="fas fa-heart"></i></div>
-            <div ><i id="icon3" class="fas fa-user-alt"></i></div>
-            <div id="ac">My Account</div>
+            <button id="icon2"><i  class="fas fa-heart"></i></button>
+            <button id="icon3" ><i class="fas fa-user-alt"></i></button>
+            <div id="ac"><a href="#">My Account</a></div>
         </div>
     </div>
     <div id="nav">
-        <div>MAKEUP<select class='arrow'></select></div>
-        <div>SKIN<select class='arrow'></select></div>
-        <div>HAIR<select class='arrow'></select></div>
-        <div>PERSONAL CARE<select class='arrow'></select></div>
-        <div>MOM AND BABY CARE<select class='arrow'></select></div>
-        <div>FRAGRANCE<select class='arrow'></select></div>
-        <div>AYURVEDA<select class='arrow'></select></div>
-        <div>BRANDS<select class='arrow'></select></div>
-        <div><i class="fas fa-shopping-cart"></i> MY CART</div>
+        <ul>
+            <li class="active btn"><a href="#">MAKEUP</a></li>
+            <li class="btn"><a href="#">SKIN</a></li>
+            <li class="btn"><a href="#">HAIR</a></li>
+            <li class="btn"><a href="#">PERSONAL CARE</a></li>
+            <li class="btn"><a href="#">MOM & BABY CARE</a></li>
+            <li class="btn"><a href="#">GRAGRANCE</a></li>
+            <li class="btn"><a href="#">AYURVEDA</a></li>
+            <li class="btn"><a href="#">BRANDS</a></li>
+            <li class="active btn"><a href="#"><i class="fas fa-shopping-cart"></i> MY CART</a></li>
+        </ul>
     </div>
 </body>   
 </html>
+
