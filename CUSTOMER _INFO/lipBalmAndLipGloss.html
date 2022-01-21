@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lip Balm And Lip Gloss</title>
+        <style>
+            #container {
+                /* border: 1px solid red; */
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                grid-gap: 2%;
+                grid-template-areas: 
+                "a1 a1 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2"
+                "a1 a1 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2"
+                "a1 a1 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2"
+                "a1 a1 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2";
+            }
+            #container > div:nth-child(1) {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                max-height: 1000px;
+                grid-area: a1;
+                margin-left: 15%;
+                /* border: 1px solid blue; */
+                display: grid;
+                grid-template-rows: repeat(4, 1fr);
+                grid-gap: 2%;
+                grid-template-areas: 
+                "b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1"
+                "b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2"
+                "b3 b3 b3 b3 b3 b3 b3 b3 b3 b3 b3 b3"
+                "b3 b3 b3 b3 b3 b3 b3 b3 b3 b3 b3 b3";
+            }
+            #pbox1 > div:nth-child(1) {
+                grid-area: b1;
+                /* border: 1px solid orange; */
+                padding: 0 3%;
+            }
+            #pbox1 > div > h3 {
+                border-bottom: 2px solid rgb(242,242,242);
+            }
+            a {
+                text-decoration: none;
+                color: black;
+                /* font-weight: bold; */
+            }
+            a:hover {
+                color: #df4d85;
+            }
+            #pbox1 > div:nth-child(2) {
+                grid-area: b2;
+                /* border: 1px solid orange; */
+                padding: 0 3%;
+            }
+            #pbox1 > div:nth-child(3) {
+                grid-area: b3;
+                /* border: 1px solid orange; */
+                background-image: url(https://www.beautybebo.com/pub/media/free-delivery.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 102%;
+            }
+            #container > div:nth-child(2) {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                grid-area: a2;
+                margin-right: 8%;
+                padding: 0 2%;
+                /* overflow: auto; */
+                /* border: 1px solid blue; */
+            }
+            #pbox2 {
+                display: grid;
+                grid-template-rows: repeat(10, 1fr);
+                grid-gap: 2%;
+                grid-template-areas: 
+                "c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1"
+                "c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1"
+                "c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+                "c3 c3 c3 c3 c3 c3 c3 c3 c3 c3 c3 c3";
+            }
+            #pbox2 > div:nth-child(1) {
+                grid-area: c1;
+            }
+            p {
+                color: gray;
+            }
+            img {
+                margin-top: 0;
+            }
+            big {
+                font-size: xx-large;
+                /* font-weight: bold; */
+                color: #df4d85;
+            }
+            #next {
+                display: flex;
+                justify-content: flex-end;
+            } 
+            #pbox2 > div:nth-child(2) {
+                grid-area: c2;
+            }
+            #pbox2 > div:nth-child(2) > div {
+                margin-top: 10%;
+            }
+            #pbox2 > div:nth-child(3) {
+                grid-area: c3;
+            }
+            #pbox2 > div:nth-child(3) > div {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 5%;
+            }
+            #pbox2 > div {
+                border-bottom: 1px solid gray;
+            }
+            @media only screen and (max-width: 720px) {
+                #container {
+                    display: grid;
+                    /* grid-gap: 2%; */
+                    grid-template-rows: repeat(2, 1fr);
+                    grid-template-areas: 
+                    "a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1"
+                    "a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2";
+                }
+                #container > div:nth-child(1) {
+                    margin-left: 0;
+                }
+                #container > div:nth-child(2) {
+                    margin-right: 0;
+                }
+                #container > div {
+                    overflow: scroll;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="pbox1">
+                <div>
+                    <h3>RECENT POSTS</h3>
+                    <p><a href="lipBalmAndLipGloss.html">Lip Balm And Lip Gloss</a></p>
+                    <p></p><a href="getNailedwithPerfectNails!.html">Get Nailed With Perfect Nails!</a></p>
+                    <p></p><a href="evenOnABadHairDay,I’mStillTheCutest.html">Even On A Bad Hair Day, I’m Still The Cutest</a></p>
+                    <p></p><a href="tipsonBestMake-upforWinter.html">Tips on Best Make-up for Winter</a></p>
+                    <p></p><a href="howtoCareforBabySkininWinter.html">How to Care for Baby Skin in Winter</a></p>
+                </div>
+                <div>
+                    <h3>ARCHIVE</h3>
+                    <p><a href="">October 2021</a></p>
+                    <p><a href="">September 2021</a></p>
+                    <p><a href="">August 2021</a></p>
+                    <p><a href="">July 2021</a></p>
+                    <p><a href="">February 2021</a></p>
+                    <p><a href="">January 2021</a></p>
+                </div>
+                <div></div>
+            </div>
+            <div id="pbox2">
+                <div>
+                    <h3>LIP BALM AND LIP GLOSS -</h3>
+                    <img src="https://www.beautybebo.com/pub/media/magefan_blog/lips.jpg" alt="">
+                    <p><big>24</big> / Oct 2021</p>
+                </div>
+                <div>
+                    <h3>Lip Balm And Lip Gloss</h3>
+                    <p>
+                        I was thinking about lip care, and something came to my mind: lip balm and lip gloss are among the major players. Essentially, whenever you want to go simple and natural on your lips, the two are the ideal bets to make this a success.
+                    </p>
+                    <p>So, it hit me, why not talk about them in a separate article?</p>
+                    <p>Now, let’s get things under water on the advantages of each, and why you actually need them.</p>
+                    <h4>Lip Balm</h4>
+                    <p>You use lip balm for a variety of reasons, so let’s dive into the major ones;</p>
+                    <dl>
+                        <dt>
+                            <h4>Protect the Lips</h4>
+                        </dt>
+                        <dd>
+                            <p>Really? Yes, you read that right. Lip balms protect the lips from several factors.</p>
+                            <p>
+                                First off, it will act as a sunscreen. UV lights, as we all know, are hazardous to the skin. Unfortunately, the lips are among the most vulnerable yet delicate parts of our skin. Even in areas where women have to cover their whole bodies, the lips are among the few that are left exposed.
+                            </p>
+                            <p>
+                                This being said, the best way you can protect your lips from the scotching sun is by using lip balm.
+                            </p>
+                            <p>
+                                Surprisingly, just like with the sun, our lips could be chapped from the cold seasons. Therefore, you will need the same application to secure your <a href="">beautiful smooth lips.</a>
+                            </p>
+                            <p>
+                                Surprisingly, just like with the sun, our lips could be chapped from the cold seasons. Therefore, you will need the same application to secure your beautiful smooth lips.
+                            </p>
+                            <p>
+                                However, not every lip balm you come across passes as great. You need trusted brands, where every minor ingredient matters.
+                            </p>
+                            <p>
+                                We assure you of this, which is why your next beauty shopping online should be more guided. We offer a wide range of lip balm products, ensuring that you get your ideal item.
+                            </p>
+                        </dd>
+
+                        <dt><h4>Lip Gloss</h4></dt>
+                        <dd>
+                            <p>
+                                When you want a catchy natural lip look, a lip gloss will always come in handy. Given that lip gloss come even in colors, you can as well proceed with your full lips look even without lipstick.
+                            </p>
+                            <p>
+                                Lip gloss play a variety of roles on your lips, including the following;
+                            </p>
+                            <p>
+                                Essentially, lip gloss adds lustre to the outlook of your lips. It gives a smooth glossy look that enhances your smile and adds to your beauty.
+                            </p>
+                            <p>
+                                Secondly, lip gloss is a moisturizing agent, just like lip balm. If you have a naturally dry skin, your lips will not be any different. To curb the effect, constant lip gloss application comes in handy.
+                            </p>
+                            <p>
+                                Moreover, the different colors that lip gloss present could add color to your lips. The great part I love about it is that the color is also so natural you would think it is your lip color. In any case, you will most likely be enhancing your natural lip color, right?
+                            </p>
+                            <p>
+                                Bottom Line
+                            </p>
+                            <p>
+                                How your lips look is your responsibility. Having chapped and dry lips is an option. So, why no rush for <a href="">cosmetic online shopping</a>, only this time take care of your slips? You simply need two things: the lip balm and the lip gloss.
+                            </p>
+                        </dd>
+                    </dl>
+                    <div id="next">
+                        <h4><a href="getNailedwithPerfectNails!.html">NEXT-></a></h4>
+                    </div>
+                    <div id="comments">
+                        <h4>0 Comments</h4>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="	https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg" alt="">
+                        <textarea name="" id="" cols="105" rows="3"></textarea>
+                    </div>
+                    <div>
+                        <a href="https://developers.facebook.com/products/social-plugins/comments/?utm_campaign=social_plugins&utm_medium=offsite_pages&utm_source=comments_plugin">Facebook Comment Page</a>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </body>
+</html>

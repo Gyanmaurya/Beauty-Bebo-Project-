@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Wish List</title>
+        <style>
+            #container {
+                /* border: 1px solid red; */
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                grid-gap: 2%;
+                grid-template-areas: 
+                "a1 a1 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2"
+                "a1 a1 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2"
+                "a1 a1 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2"
+                "a1 a1 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2";
+            }
+            #container > div:nth-child(1) {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                grid-area: a1;
+                margin-left: 15%;
+                /* border: 1px solid blue; */
+                display: grid;
+                grid-template-rows: repeat(3, 1fr);
+                grid-gap: 2%;
+                grid-template-areas: 
+                "b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1"
+                "b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2"
+                "b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2";
+            }
+            #pbox1 > div:nth-child(1) {
+                grid-area: b1;
+                /* border: 1px solid orange; */
+            }
+            li {
+                padding: 2%;
+                list-style: none;
+            }
+            li:hover, a:hover {
+                background-color: rgb(248, 73, 102);
+                color: white;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            #pbox1 > div:nth-child(2) {
+                grid-area: b2;
+                /* border: 1px solid orange; */
+                background-image: url(https://www.beautybebo.com/pub/media/free-delivery.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 102%;
+            }
+            #container > div:nth-child(2) {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                grid-area: a2;
+                margin-right: 10%;
+                padding: 0 2%;
+                /* border: 1px solid blue; */
+            }
+            #pbox2 {
+                display: grid;
+                grid-template-rows: repeat(9, 1fr);
+                grid-gap: 2%;
+                grid-template-areas: 
+                "c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2";
+            }
+            #pbox2 > div:nth-child(1) {
+                grid-area: c1;
+                border-bottom: 1px solid gray;
+            }
+            #pbox2 > div:nth-child(2) {
+                grid-area: c2;
+                /* border: 1px solid red; */
+            }
+            #cbox > div {
+                background-color: wheat;
+            }
+            #cbox > div > p {
+                padding: 1% 3%;
+            }
+            /* medium screen */
+            @media only screen and (min-width: 321px) and (max-width: 720px) {
+                #container {
+                    grid-template-rows: repeat(2, 1fr);
+                    grid-template-areas: 
+                    "a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1"
+                    "a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2";
+                }
+                #container > div:nth-child(1) {
+                    margin-left: 0;
+                }
+                #container > div:nth-child(2) {
+                    margin-right: 0;
+                }
+            }
+            /* small screen */
+            @media only screen and (min-width: 0px) and (max-width: 320px) {
+                #container {
+                    grid-template-rows: repeat(2, 1fr);
+                    grid-template-areas: 
+                    "a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1"
+                    "a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2";
+                }
+                #container > div:nth-child(1) {
+                    margin-left: 0;
+                }
+                #container > div:nth-child(2) {
+                    margin-right: 0;
+                }
+                #container > div {
+                    font-size: small;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="pbox1">
+                <div>
+                    <ul>
+                        <li><strong><a href="myAccountSection.html">My Account</a></strong></li>
+                        <li><strong><a href="">My Orders</a></strong></li>
+                        <li><strong><a href="">My Wish List</a></strong></li>
+                        <li><hr /></li>
+                        <li><strong><a href="">Address Book</a></strong></li>
+                        <li><strong><a href="">Account Information</a></strong></li>
+                        <li><hr /></li>
+                        <li><strong><a href="">My Product Review</a></strong></li>
+                        <li><strong><a href="">Newsletter Subscription</a></strong></li>
+                    </ul>
+                </div>
+                <div></div>
+            </div>
+            <div id="pbox2">
+                <div>
+                    <h1>My Wish List</h1>
+                </div>
+                <div id="cbox">
+                    <div>
+                        <p>You have no items in your wish list.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
