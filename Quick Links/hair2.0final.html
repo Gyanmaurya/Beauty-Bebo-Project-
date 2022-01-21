@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hair</title>
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            #container {
+                border: 1px solid blue;
+                padding: 1%;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                grid-gap: 1% 2%;
+                text-align: center;
+                /* background-color: #df4d85; */
+                /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2PhpmamwInMWH8pcJF2jyfsfL6vn4AuICRA&usqp=CAU); */
+                overflow: auto;
+            }
+            #container > div {
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                border-radius: 10% 0;
+                background-color: white;
+            }
+            #container > div > img {
+                width: 100%;
+                height: 250px;
+                border-radius: 10% 0 0 0;
+            }
+            #container > div > div {
+                display: flex;
+                justify-content: center;
+                /* padding-left: 5%; */
+                margin-top: -5%;
+                color: #df4d85;
+            }
+            P{
+                margin-top: 0;
+                font-weight: bold;
+                color: gray;
+                padding-left: 5%;
+            }
+            h4 {
+                text-decoration: line-through;
+                color: gray;
+                margin-left: 5%;
+            }
+            button {
+                /* margin-top: -5%; */
+                font-size: large;
+                font-weight: bold;
+                background-color: rgb(151, 148, 148);
+                height: 8%;
+                margin-bottom: 10%;
+                border: 0;
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+            }
+            button:hover {
+                color: white;
+                background-color: #df4d85;
+            }
+            /* large screen  */
+            @media only screen and (min-width: 721px) and (max-width: 1024px) {
+                #container {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+            /* medium screen  */
+            @media only screen and (min-width: 321px) and (max-width: 720px) {
+                #container {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            /* small screen  */
+            @media only screen and (min-width: 0px) and (max-width: 320px) {
+                #container {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        
+    </body>
+</html>
+
+
+<script>
+    var hairContainer = document.createElement("div");
+    hairContainer.setAttribute("id", "container");
+
+    var hairData = [
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/t/e/tea-tree-beard-oil_1.jpg",
+            paragraph: "Mamaearth Tea Tree Beard Oil With Tea Tree & Salicylic Acid",
+            price: "449.00",
+            strickPrice: "499.00",
+
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/t/e/tea-tree-beard-oil_1.jpg",
+            paragraph: "Mamaearth Onion Beard Oil With Onion & Redensyl For",
+            price: "449.00",
+            strickPrice: "499.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/0/4045787429534.jpg",
+            paragraph: "Schwarzkopf Professional Bonacure Hyaluronic Moisture",
+            price: "950.00",
+            strickPrice: "1,000.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/0/4045787430523_2.jpg",
+            paragraph: "Schwarzkopf Osis+ Curl Honey Curl Cream",
+            price: "698.00",
+            strickPrice: "750.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/0/4045787429633_2.jpg",
+            paragraph: "Schwarzkopf Professional Bonacure Collagen Volume",
+            price: "846.00",
+            strickPrice: "900.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/a/c/accc6918906087777182_1.jpg",
+            paragraph: "Mamaearth Cold Pressed Almond Oil & Vitamin E For",
+            price: "360.00",
+            strickPrice: "399.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/0/4045787429695_2.jpg",
+            paragraph: "Schwarzkopf Professional Bonacure Keratin Smooth",
+            price: "930.00",
+            strickPrice: "1,000.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/a/2/a23342b8904311901235_1.jpg",
+            paragraph: "WOW Skin Science Moroccan Argan Oil Hair Conditioner",
+            price: "527.00",
+            strickPrice: "599.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/8/9/8904311902027_1.jpg",
+            paragraph: "WOW Skin Science Hair Mask For Dry And Damaged Hair",
+            price: "489.00",
+            strickPrice: "549.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/8/9/8904311900788_1_1.jpg",
+            paragraph: "WOW Skin Science Moroccan Argan Oil Shampoo - 300ml",
+            price: "489.00",
+            strickPrice: "549.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/n/y/nywowbndl0064.jpg",
+            paragraph: "Wow Onion Hair Care Combo",
+            price: "1,437.00",
+            strickPrice: "1,597.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/8/9/8904304495512_1_.jpg",
+            paragraph: "WOW Skin Science Coconut Milk Hair Conditioner",
+            price: "435.00",
+            strickPrice: "499.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/7/a/7af639c8904311904274__1_.jpg",
+            paragraph: "WOW Skin Science Himalayan Rose Shampoo",
+            price: "395.00",
+            strickPrice: "449.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/c/e/ce32bed8906105613409_1.jpg",
+            paragraph: "WOW Skin Science Amla Shampoo For Weak Roots &",
+            price: "395.00",
+            strickPrice: "449.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/e/6/e62cbed8906105615151_1.jpg",
+            paragraph: "WOW Skin Science Rice Water Conditioner With Rice Water, Rice Keratin & Lavender Oil",
+            price: "386.00",
+            strickPrice: "449.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/9/d/9d9efa68904311902348_1.jpg",
+            paragraph: "WOW Skin Science Red Onion Black Seed Oil Hair Mask",
+            price: "435.00",
+            strickPrice: "499.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/5/2/52_2.jpg",
+            paragraph: "Garnier Fructis Hair Care Combo",
+            price: "300.00",
+            strickPrice: "325.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/2/1/21_12_5.jpg",
+            paragraph: "Mamaearth Ubtan Nourishing Hair Removal Cream Kit, For",
+            price: "391.00",
+            strickPrice: "449.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/4/14_16_5.jpg",
+            paragraph: "WOW Skin Science Coconut Milk Shampoo",
+            price: "435.00",
+            strickPrice: "499.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/3/139_1.jpg",
+            paragraph: "Clinic Plus Strong & Thick Health Shampoo With Almond",
+            price: "655.00",
+            strickPrice: "770.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/t/e/tea-tree-beard-oil_1.jpg",
+            paragraph: "Mamaearth Tea Tree Beard Oil With Tea Tree & Salicylic Acid",
+            price: "449.00",
+            strickPrice: "499.00",
+
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/t/e/tea-tree-beard-oil_1.jpg",
+            paragraph: "Mamaearth Onion Beard Oil With Onion & Redensyl For",
+            price: "449.00",
+            strickPrice: "499.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/0/4045787429534.jpg",
+            paragraph: "Schwarzkopf Professional Bonacure Hyaluronic Moisture",
+            price: "950.00",
+            strickPrice: "1,000.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/0/4045787430523_2.jpg",
+            paragraph: "Schwarzkopf Osis+ Curl Honey Curl Cream",
+            price: "698.00",
+            strickPrice: "750.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/0/4045787429633_2.jpg",
+            paragraph: "Schwarzkopf Professional Bonacure Collagen Volume",
+            price: "846.00",
+            strickPrice: "900.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/a/c/accc6918906087777182_1.jpg",
+            paragraph: "Mamaearth Cold Pressed Almond Oil & Vitamin E For",
+            price: "360.00",
+            strickPrice: "399.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/0/4045787429695_2.jpg",
+            paragraph: "Schwarzkopf Professional Bonacure Keratin Smooth",
+            price: "930.00",
+            strickPrice: "1,000.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/a/2/a23342b8904311901235_1.jpg",
+            paragraph: "WOW Skin Science Moroccan Argan Oil Hair Conditioner",
+            price: "527.00",
+            strickPrice: "599.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/8/9/8904311902027_1.jpg",
+            paragraph: "WOW Skin Science Hair Mask For Dry And Damaged Hair",
+            price: "489.00",
+            strickPrice: "549.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/8/9/8904311900788_1_1.jpg",
+            paragraph: "WOW Skin Science Moroccan Argan Oil Shampoo - 300ml",
+            price: "489.00",
+            strickPrice: "549.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/n/y/nywowbndl0064.jpg",
+            paragraph: "Wow Onion Hair Care Combo",
+            price: "1,437.00",
+            strickPrice: "1,597.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/8/9/8904304495512_1_.jpg",
+            paragraph: "WOW Skin Science Coconut Milk Hair Conditioner",
+            price: "435.00",
+            strickPrice: "499.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/7/a/7af639c8904311904274__1_.jpg",
+            paragraph: "WOW Skin Science Himalayan Rose Shampoo",
+            price: "395.00",
+            strickPrice: "449.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/c/e/ce32bed8906105613409_1.jpg",
+            paragraph: "WOW Skin Science Amla Shampoo For Weak Roots &",
+            price: "395.00",
+            strickPrice: "449.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/e/6/e62cbed8906105615151_1.jpg",
+            paragraph: "WOW Skin Science Rice Water Conditioner With Rice Water, Rice Keratin & Lavender Oil",
+            price: "386.00",
+            strickPrice: "449.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/9/d/9d9efa68904311902348_1.jpg",
+            paragraph: "WOW Skin Science Red Onion Black Seed Oil Hair Mask",
+            price: "435.00",
+            strickPrice: "499.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/5/2/52_2.jpg",
+            paragraph: "Garnier Fructis Hair Care Combo",
+            price: "300.00",
+            strickPrice: "325.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/2/1/21_12_5.jpg",
+            paragraph: "Mamaearth Ubtan Nourishing Hair Removal Cream Kit, For",
+            price: "391.00",
+            strickPrice: "449.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/4/14_16_5.jpg",
+            paragraph: "WOW Skin Science Coconut Milk Shampoo",
+            price: "435.00",
+            strickPrice: "499.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/3/139_1.jpg",
+            paragraph: "Clinic Plus Strong & Thick Health Shampoo With Almond",
+            price: "655.00",
+            strickPrice: "770.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/t/e/tea-tree-beard-oil_1.jpg",
+            paragraph: "Mamaearth Tea Tree Beard Oil With Tea Tree & Salicylic Acid",
+            price: "449.00",
+            strickPrice: "499.00",
+
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/t/e/tea-tree-beard-oil_1.jpg",
+            paragraph: "Mamaearth Onion Beard Oil With Onion & Redensyl For",
+            price: "449.00",
+            strickPrice: "499.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/0/4045787429534.jpg",
+            paragraph: "Schwarzkopf Professional Bonacure Hyaluronic Moisture",
+            price: "950.00",
+            strickPrice: "1,000.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/0/4045787430523_2.jpg",
+            paragraph: "Schwarzkopf Osis+ Curl Honey Curl Cream",
+            price: "698.00",
+            strickPrice: "750.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/0/4045787429633_2.jpg",
+            paragraph: "Schwarzkopf Professional Bonacure Collagen Volume",
+            price: "846.00",
+            strickPrice: "900.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/a/c/accc6918906087777182_1.jpg",
+            paragraph: "Mamaearth Cold Pressed Almond Oil & Vitamin E For",
+            price: "360.00",
+            strickPrice: "399.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/0/4045787429695_2.jpg",
+            paragraph: "Schwarzkopf Professional Bonacure Keratin Smooth",
+            price: "930.00",
+            strickPrice: "1,000.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/a/2/a23342b8904311901235_1.jpg",
+            paragraph: "WOW Skin Science Moroccan Argan Oil Hair Conditioner",
+            price: "527.00",
+            strickPrice: "599.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/8/9/8904311902027_1.jpg",
+            paragraph: "WOW Skin Science Hair Mask For Dry And Damaged Hair",
+            price: "489.00",
+            strickPrice: "549.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/8/9/8904311900788_1_1.jpg",
+            paragraph: "WOW Skin Science Moroccan Argan Oil Shampoo - 300ml",
+            price: "489.00",
+            strickPrice: "549.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/n/y/nywowbndl0064.jpg",
+            paragraph: "Wow Onion Hair Care Combo",
+            price: "1,437.00",
+            strickPrice: "1,597.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/8/9/8904304495512_1_.jpg",
+            paragraph: "WOW Skin Science Coconut Milk Hair Conditioner",
+            price: "435.00",
+            strickPrice: "499.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/7/a/7af639c8904311904274__1_.jpg",
+            paragraph: "WOW Skin Science Himalayan Rose Shampoo",
+            price: "395.00",
+            strickPrice: "449.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/c/e/ce32bed8906105613409_1.jpg",
+            paragraph: "WOW Skin Science Amla Shampoo For Weak Roots &",
+            price: "395.00",
+            strickPrice: "449.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/e/6/e62cbed8906105615151_1.jpg",
+            paragraph: "WOW Skin Science Rice Water Conditioner With Rice Water, Rice Keratin & Lavender Oil",
+            price: "386.00",
+            strickPrice: "449.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/9/d/9d9efa68904311902348_1.jpg",
+            paragraph: "WOW Skin Science Red Onion Black Seed Oil Hair Mask",
+            price: "435.00",
+            strickPrice: "499.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/5/2/52_2.jpg",
+            paragraph: "Garnier Fructis Hair Care Combo",
+            price: "300.00",
+            strickPrice: "325.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/2/1/21_12_5.jpg",
+            paragraph: "Mamaearth Ubtan Nourishing Hair Removal Cream Kit, For",
+            price: "391.00",
+            strickPrice: "449.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/4/14_16_5.jpg",
+            paragraph: "WOW Skin Science Coconut Milk Shampoo",
+            price: "435.00",
+            strickPrice: "499.00",
+        },
+        {
+            image: "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/3/139_1.jpg",
+            paragraph: "Clinic Plus Strong & Thick Health Shampoo With Almond",
+            price: "655.00",
+            strickPrice: "770.00",
+        },
+    ];
+
+    hairData.map(function(el) {
+        var box = document.createElement("div");
+
+        var image = document.createElement("img");
+        image.setAttribute("src", el.image);
+
+        var par = document.createElement("p");
+        par.textContent = el.paragraph;
+
+        var cbox = document.createElement("div");
+
+        var price = document.createElement("h2");
+        price.textContent = el.price;
+
+        var strickPrice = document.createElement("h4");
+        strickPrice.textContent = el.strickPrice;
+
+        var button = document.createElement("button");
+        button.textContent = "Add To Cart";
+
+        cbox.append(price, strickPrice);
+        box.append(image, par, cbox, button);
+        hairContainer.append(box);
+        document.querySelector("body").append(hairContainer)
+    });
+</script>
