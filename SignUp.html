@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Bebo Beauty</title>
+    <script src="https://kit.fontawesome.com/629044acfa.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            margin-right: 500px;
+            height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            background: url("https://i.pinimg.com/originals/ff/8a/2a/ff8a2add7bb1ef3725379ff8522956d7.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        form {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        input {
+            display: block;
+            width: 350px;
+            height: 40px;
+            margin: 10px;
+            border: none;
+            font-size: 20px;
+            color: white;
+            border-bottom: 2px solid black;
+            background: transparent;
+            text-align: center;
+            border-radius: 20px;
+            /* background-color:rgb(117,147,145) ; */
+        }
+
+        select {
+            width: 350px;
+            height: 40px;
+            border: none;
+            font-size: 20px;
+            color: white;
+            border-bottom: 1px solid black;
+            background: transparent;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        button {
+            width: 350px;
+            height: 40px;
+            border: none;
+            font-size: 20px;
+            background: rgb(30, 46, 77);
+            color: white;
+            margin-top: 10px;
+            border-radius: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        ::placeholder {
+            color: white;
+        }
+
+        body>button {
+            width: 350px;
+            height: 40px;
+            font-size: 20px;
+            background-color: #419cca;
+            margin-top: 8px;
+            border-radius: 20px;
+
+        }
+        body>button:hover{
+          background-color:blue ;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="text" onclick="LoginFacebook()"><i class="fab fa-facebook"></i> Login_facebook  </button>
+    <button type="text" onclick="LoginGoogle()"><i class="fab fa-google-plus"></i> Login_Google</button>
+    
+
+    <form action="">
+
+        <h1>----OR----</h1>
+        <input type="text" id="Name" placeholder="First name">
+        <input type="text" id="LName" placeholder="Last name">
+        <input type="tel" id="Mbl" value="+91" placeholder="Mobile number">
+
+        <!-- <select name="" id="">
+            <option value="">Male</option>
+            <option value="">Female</option>
+        </select> -->
+        <input type="text" id="Eid" placeholder="Email_ID">
+        <input type="password" id="Pass" placeholder="Password">
+        <input type="password" id="CPass" placeholder="Confirmed Password">
+        <button type="submit">Sign Up</button>
+    </form>
+
+</body>
+
+</html>
+<script>
+document.querySelector("form").addEventListener("submit",LoginFunction)
+var LoginArr=JSON.parse(localStorage.getItem("LocalData"))||[]
+// console.log(LoginArr)
+// console.log(LoginArr.Name)
+function LoginFunction(event){
+    event.preventDefault();
+    var Name=document.querySelector("#Name").value
+    var LName=document.querySelector("#LName").value
+    var Mbl=document.querySelector("#Mbl").value
+    var Eid=document.querySelector("#Eid").value
+    var Pass=document.querySelector("#Pass").value
+    var CPass=document.querySelector("#CPass").value
+LoginObj={
+   Login_Name:Name,
+   Login_LName:LName,
+   Login_Mbl:Mbl,
+   Login_Eid:Eid,
+   Login_Pass:Pass,
+   Login_CPass:CPass,
+}
+LoginArr.push(LoginObj);
+
+localStorage.setItem("LocalData",JSON.stringify(LoginArr))
+if((LoginArr[LoginArr.length-1].Login_Pass)==(LoginArr[LoginArr.length-1].Login_CPass)){
+    alert("Successfully SignUp")
+    window.location.href="SignIn.html"
+}
+else{
+    alert("Password Not Matched")
+}
+    
+   
+
+}
+function LoginFacebook(){
+    window.location.href="https://www.facebook.com/"
+}
+function LoginGoogle(){
+    window.location.href="https://myaccount.google.com/"
+}
+
+
+
+</script>
