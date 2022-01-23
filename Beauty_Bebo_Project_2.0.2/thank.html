@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Page-Beauty Bebo</title>
+    <style>
+
+        #conta {
+            width: 50%;
+            height: 500px;
+            margin: auto;
+            background-color: snow;
+            border: 2px solid rgb(122, 118, 118);
+            margin-top: 100px;
+            text-align: center;
+            line-height: 35px;
+        }
+
+        #orderno{
+            margin: auto;
+        }
+
+        button{
+            padding: 10px 5px;
+            background-color: darkslategray;
+            color: white;
+        }
+
+        button:hover{
+            background-color: rgb(226, 52, 81);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="conta">
+<h2>THANK YOU FOR YOUR PURCHASE!</h2>
+<div id="orderno">
+<p>Your order Number : <strong><script> document.write(Math.floor(Math.random()*100000+1))</script><P><P></P></P></strong> 
+<p>we'll email you an order confirmation with details and tracking info</p>
+<button onclick="window.location.href='BeboBeauty.html' ">CONTINUE SHOPPING</button>
+</div>
+    </div>
+</body>
+
+</html>
