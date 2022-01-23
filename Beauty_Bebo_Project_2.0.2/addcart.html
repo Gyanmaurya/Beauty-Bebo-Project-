@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add To Cart</title>
+    <style>
+ #Parent{
+            width: 80%;
+            padding: 20px;
+            /* border: 1px solid gray; */
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+        }
+        #container{
+            width: 58%;
+        }
+        #right1{
+            height: 600px;
+            width: 38%;
+            margin: auto;
+            margin-top: 0px;
+        }
+        #gift{
+            display: flex;
+            justify-content: space-around;
+            background-color: rgb(247, 147, 147);
+            height: 140px;
+        }
+        #buttonPriya{
+            width: 100px;
+            margin-bottom: 8px;
+            padding: 5px;
+            background-color:rgb(197, 42, 14) ;
+            border-radius: 20px;
+            color: white;
+            border:0px ;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        img{
+            height: 140px;
+        }
+        .giftinfo{
+            width: 55%;
+        }
+        .giftinfo > h4 {
+            text-decoration: none;
+        }
+        h4{
+            font-size: 14px;
+            margin-bottom: 0px;
+        }
+        h3{
+            color: rgb(161, 157, 157);
+            font-weight: 300;
+        }
+        h5{
+            color: rgb(212, 57, 30);
+        }
+        #pricedetail{
+            display: flex;
+            /* border: 1px solid yellow; */
+            justify-content: space-between;
+        }
+        
+        #cupon{
+            color: rgb(255, 99, 71);
+            cursor: pointer;
+        }
+        #total{
+            display: flex;
+            justify-content: space-between;
+        }
+        #coin{
+            margin-right: 50px;
+        }
+        #button{
+            padding: 10px;
+            width: 100%;
+            background-color: rgb(211, 70, 45);
+            color: white;
+            font-size: 18px;
+            border: 0px;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        #mid{
+            height: 600px;
+            /* border: 1px solid gray; */
+            margin-left: 5px;
+        }
+
+
+
+
+
+
+        /* *{
+            border: 1px solid red;
+        } */
+           #container {
+                /* border: 1px solid blue; */
+                padding: 1%;
+                display: grid;
+                grid-template-columns: repeat(1,300px );
+                grid-gap: 1% 2%;
+                text-align: center;
+                
+                /* background-color: #df4d85; */
+                /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2PhpmamwInMWH8pcJF2jyfsfL6vn4AuICRA&usqp=CAU); */
+                /* overflow: auto; */
+            }
+            #container > div {
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                border-radius: 10% 0;
+                background-color: white;
+            }
+            #container > div > img {
+                width: 100%;
+                height: 250px;
+                border-radius: 10% 0 0 0;
+            }
+            #container > div > div {
+                display: flex;
+                justify-content: center;
+                /* padding-left: 5%; */
+                margin-top: -5%;
+                color: #df4d85;
+            }
+            P{
+                margin-top: 0;
+                font-weight: bold;
+                color: gray;
+                padding-left: 5%;
+            }
+            h4 {
+                text-decoration: line-through;
+                color: gray;
+                margin-left: 5%;
+            }
+            @media only screen and (min-width: 721px) and (max-width: 1024px) {
+                #container {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+            @media only screen and (min-width: 321px) and (max-width: 720px) {
+                #container {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            @media only screen and (min-width: 0px) and (max-width: 320px) {
+                #container {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+
+      
+      p{
+          font-size: 14px;
+      }
+    </style>
+</head>
+<body>
+    
+    <div id="Parent">
+        
+        <div id="container">
+            
+        </div>
+        <div id="mid"></div>
+        <div id="right1">
+            <hr>
+            <h3>GIFTING & PERSANILSATION</h3>
+            
+            <div id="gift">
+                <div><img src="https://constant.myntassets.com/checkout/assets/img/gift-big.webp" alt=""></div>
+                <div class="giftinfo">
+                    <h4>Buying For Loved One?</h4>
+                    <p>Gift wrap and persanalised message on card, Only for Rs. 25</p>
+                    <h5>ADD GIFT WRAP</h5>
+                </div>
+            </div>
+            <hr>
+            <h3>PRICE DETAILS</h3>
+            <div id="pricedetail">
+                <div>
+                    <p>Total MRP</p>
+                    <p>Discount</p>
+                    <p>Coupon Discount</p>
+                    <p>Delievery Fee</p>
+
+                </div>
+                <div>
+                    <p id="mrp">0.0</p>
+                    <p id="discount">0.0</p>
+                    <p id="cupon">Apply Coupon</p>
+                    <p>Free</p>
+                </div>
+            </div>
+            <hr>
+            <div id="total">
+                <h2>Total Amount</h2>
+                <h2 id="coin">0.0</h2>
+            </div>
+            <button onclick="window.location.href='payment.html' " id="button">PLACE YOUR ORDER</button>
+        </div>
+    </div>
+        
+      
+        
+        
+    
+    
+    
+    <!-- <button onclick="window.location.href='payment.html' ">Buy All Product</button> -->
+</body>
+</html>
+<script>
+    var CartArray=JSON.parse(localStorage.getItem("CartItemsSkin"))
+    
+CartArray.map(function(el){
+    var box = document.createElement("div");
+
+var image = document.createElement("img");
+image.setAttribute("src", el.image);
+
+var par = document.createElement("p");
+par.textContent = el.name;
+
+var cbox = document.createElement("div");
+
+var price = document.createElement("h2");
+price.textContent = el.price;
+
+var strickPrice = document.createElement("h4");
+strickPrice.textContent = el.strikedoffprice;
+var btn=document.createElement("button")
+btn.textContent="Remove"
+btn.setAttribute("id","buttonPriya")
+btn.addEventListener("click",function(){
+    RemoveTask(el)
+})
+
+// var button = document.createElement("button");
+// button.textContent = "Add To Cart";
+// button.addEventListener("click",function(){
+//     addCart(el)
+// })
+
+cbox.append(price, strickPrice);
+box.append(image, par, cbox,btn);
+document.querySelector("#container").append(box);
+
+});
+
+var total=CartArray.reduce(function(acc,cv){
+    // console.log(typeof CartArray[3].price)
+    return acc+ Number(cv.price)
+});
+function RemoveTask(index){
+    console.log(index)
+CartArray.splice(index,1)
+alert("Confirm To Remove")
+// btn.setAttribute("target","_blank")
+localStorage.setItem("CartItemsSkin",JSON.stringify(CartArray))
+
+};
+
+var sum=0;
+var sum1=0;
+for(var i=0; i<CartArray.length;i++){
+sum=sum+CartArray[i].price;
+sum1=sum1+CartArray[i].strikedoffprice;
+}
+
+document.querySelector("#coin").textContent=` ${sum}`
+document.querySelector("#mrp").textContent=`${sum1}`
+document.querySelector("#discount").textContent=`${sum-sum1}`
+ 
+</script>
