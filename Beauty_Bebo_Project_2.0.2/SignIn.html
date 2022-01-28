@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Bebo Beauty</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+            
+        }
+        body{
+            /* width: 100%;
+            height: 100vh; */
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            background: url("https://i.pinimg.com/originals/ff/8a/2a/ff8a2add7bb1ef3725379ff8522956d7.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        form{
+            margin-right: 500px;
+            margin-top: 100px;
+            text-align: center;
+            border: none;
+            
+        }
+        input{
+            text-align: center;
+            display: block;
+            margin: 10px;
+            width:350px;
+            height: 50px;
+            border: none;
+            border-radius: 20px;
+            font-size: 20px;
+            border-bottom: 1px solid black;
+            background-color: transparent;
+            margin-top: 20px;
+        }
+        
+        button{
+            width:350px;
+            height: 50px; 
+            background: rgb(30, 46, 77);
+            border: none;
+            border-radius: 20px;
+            font-size: 20px;
+            color: white;
+            border-bottom: 1px solid black;
+            margin-top: 20px;
+        }
+        ::placeholder{
+            color: white;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <form action="">
+        <h1>Bebo Beauty login</h1>
+    <input type="email" id="eml" placeholder="Enter Email">
+    <input type="password" id="pwd" placeholder="Enter password">
+    <button type="submit">Login</button>
+</form>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",SignInFunction)
+    var LoginArr= JSON.parse(localStorage.getItem("LocalData"))
+    // console.log(LoginArr)
+    // console.log(LoginArr)
+    function SignInFunction(event){
+event.preventDefault();
+var Email=document.querySelector("#eml").value
+// console.log(Email)
+var Password=document.querySelector("#pwd").value
+// console.log(LoginArr[10].Login_Eid)
+var count=0;
+for(var i=0;i<LoginArr.length;i++){
+    if(LoginArr[i].Login_Eid==Email && LoginArr[i].Login_Pass==Password){
+        
+        window.location.href="BeboBeauty.html"
+        alert("Login SuccesFully")
+    }
+    else{
+    count++;
+    }
+}
+if(count==LoginArr.length){
+    alert("Invalid")
+
+}
+
+
+
+
+    }
+</script>

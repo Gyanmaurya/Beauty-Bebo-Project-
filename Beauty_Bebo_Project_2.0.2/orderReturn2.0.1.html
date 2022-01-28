@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <title>Order Return</title>
+        <style>
+            /* main container  */
+            #pcontainer {
+                /* border: 3px solid red; */
+                overflow: auto;
+                /* grid-gap: 2%; */
+                display: grid;
+                grid-gap: 5%;
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-areas: 
+                "a a a a a a a a a a a"
+                "b b b b b b b b b b b"
+                "c c c c c c c c c c c";
+            }
+            #pcontainer > div:nth-child(1) {
+                grid-area: a;
+            }
+            #pcontainer > div:nth-child(2) {
+                grid-area: b;
+            }
+            
+            #pcontainer > div:nth-child(3) {
+                grid-area: c;
+            } 
+
+
+
+
+
+            /* navbar css */
+            body{
+                font-family: "Helvetica Neue", sans-serif;
+            }   
+            #navbar {
+                /* border: 1px solid red; */
+                display: grid;
+                grid-template-rows: 40% 60%;
+                
+            }
+            #nbox > img {
+                width: 100%;
+            }
+            #nav{
+                background-color: #ee29a2;
+                text-align: center;
+            }
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            #nav{
+                display: flex;
+            }
+            .sidebar{
+                /* border: 1px solid blue; */
+                display: flex;
+                justify-content: space-around;
+                width: 90%;
+                /* margin: 0px;
+                padding: 0px; */
+            }
+            #nav ul{
+                width: 90%;
+                display: flex;
+                justify-content: space-around;
+                list-style-type: none;
+                color: #fff;
+            }
+            #nav ul li{
+                margin: 5px;
+                padding: 10px;
+                margin: 0px;
+                /* margin-top: -1%; */
+                /* padding: 0px; */
+            }
+            .mycart{
+                width: 10%;
+                margin: 5px;
+                padding: 10px;
+            }
+            #list3 > li > a{
+                color: #fff;
+                text-decoration: none;
+            }
+            #middle{
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+            }
+            #logo{
+                width: 25%;
+            }
+            #search{
+                display: flex;
+                width: 55%;
+                height: 35px;
+                margin-top:20px;
+                border :1px solid gray;
+                border-radius: 4px;
+            }
+            #search #right button{
+                border: 0px;
+                cursor: pointer;
+            }
+            #left{
+                display: flex;
+                width: 40%;
+                justify-content: space-around;
+                box-sizing: border-box;
+                padding: 9px;
+            }
+            #content{
+                color: rgb(124, 119, 119);
+                font-size: 14px;
+            }
+            #select{
+                color:rgb(128, 125, 125);
+                border: 0px;
+            }
+            #line{
+                height: 20px;
+                width: 0px;
+                border: 1px solid rgb(196, 187, 187);
+                margin-top: 8px;
+            }
+            #right{
+                display: flex;
+                width: 60%;
+                margin-left: 30px;
+                justify-content: space-between;
+                margin-top: 2px;
+            }
+            #text{
+                border: 0px;
+            }
+            #icon1{
+                width: 50px;
+                height: 35px;
+                margin-top: -2px;
+                background-color: #ee29a2;
+                color: #fff;
+            }
+            #icon1 i{
+                width: 50px;
+                height: 100%;
+                font-size: 20px;
+                /* margin-left: 4px; */
+                margin-top:10px ;
+            }
+            #account{
+                display: flex;
+                width: 15%;
+                justify-content: space-around;
+                margin-top: 22px;
+            }
+            #icon2{
+                box-sizing: border-box;
+                padding: 5px;
+                height: 35px;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            #icon3{
+                box-sizing: border-box;
+                padding: 5px;
+                height: 35px;
+                border: 1px solid rgb(163, 153, 153);
+                font-size: 20px;
+                cursor: pointer;
+            }
+            #ac a{
+                font-size: 18px;
+                margin: 8px;
+                font-weight: 400;
+                color: black;
+            }
+            .active,#nav ul li:hover{
+                background-color: rgb(199, 32, 157);
+                border-radius: 5px;
+                
+            }
+            .mycart > a{
+                text-decoration: none;
+                color: black;
+            }
+            #small{
+                display: none;
+                border: 1px solid blue;
+                width: 100%;
+            }
+            .flex3{
+                width: 85%;
+                margin: auto;
+                display: flex;
+                justify-content: space-evenly;
+                padding: 10px;
+            }
+            .flex3 img{
+                width: 30%;
+            } 
+            .flex3 span{
+                width:70%;
+            }
+            .input{
+                width: 80%;
+                height: 20px;
+                margin: auto;
+                border: 1px solid gray;
+                border-style:dotted;
+            }
+            .input input{
+                width: 80%;
+            }
+            .input #icon1{
+                width: 20%;
+            }
+            
+
+            
+
+
+            /* body css */
+            #container {
+                /* border: 1px solid red; */
+                /* background-image: url(data:image/jpeg;base64,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);
+                background-repeat: no-repeat;
+                background-size: 100% 100%; */
+                font-weight: bold;
+                /* font-size: large; */
+                padding: 0 10% 0 10%;
+                display: grid;
+                grid-template-rows: repeat(6, 1fr);
+                /* grid-gap: 2%; */
+                grid-template-areas: 
+                "a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1"
+                "a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2"
+                "a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2"
+                "a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2"
+                "a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2"
+                "a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2";
+            }
+            #container > div:nth-child(1) {
+                grid-area: a1;
+                border-bottom: 1px solid gray;
+            }
+            #container > div:nth-child(2) {
+                grid-area: a2;
+                margin-top: 2%;
+                /* border: 1px solid purple; */
+                display: grid;
+                grid-template-rows: repeat(5 1fr);
+                grid-gap: 5% 0;
+                grid-template-areas: 
+                "b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1"
+                "b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2"
+                "b3 b3 b3 b3 b3 b3 b3 b3 b3 b3 b3 b3"
+                "b4 b4 b4 b4 b4 b4 b4 b4 b4 b4 b4 b4"
+                "b5 b5 b5 b5 b5 b5 b5 b5 b5 b5 b5 b5";
+            }
+            #box > div:nth-child(1) {
+                grid-area: b1;
+                /* border: 1px solid blue; */
+            }
+            #box > div:nth-child(2) {
+                grid-area: b2;
+                /* border: 1px solid blue; */
+            }
+            #box > div:nth-child(3) {
+                grid-area: b3;
+                /* border: 1px solid blue; */
+            }
+            #box > div:nth-child(4) {
+                grid-area: b4;
+                /* border: 1px solid blue; */
+            }
+            #box > div:nth-child(5) {
+                grid-area: b5;
+                /* border: 1px solid blue; */
+            }
+            sele {
+                padding: 7px;
+                font-size: large;
+            }
+            label {
+                font-style: italic;
+            }
+            .in {
+              width: 40%;
+              min-width: 500px;
+              height: 50%;
+            }
+            #sea {
+                width: 10%;
+                min-width: 100px;
+                height: 60%;
+                font-size: large;
+                font-weight: bold;
+                background-color: gray;
+                color: white;
+                border: 0;
+                margin-bottom: 2%;
+            }
+            #sea:hover {
+                background-color: rgb(253, 75, 104);
+            }
+            /* medium screen */
+            @media only screen and (min-width: 321px) and (max-width: 720px) {
+                input, select {
+                    width: 70%;
+                    min-width: 30%;
+                }
+            }
+            /* small screen */
+            @media only screen and (min-width: 0px) and (max-width: 320px) {
+                input, select {
+                    width: 100%;
+                    min-width: 30%;
+                }
+            }
+
+
+
+
+            /* footer css */
+            #contu{
+                /* border: 1px solid red; */
+                display: grid;
+                background-color: black;
+                /* overflow: auto; */
+            }
+            #footer {
+                padding-top: 2%;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                border: red;
+                color: white;
+                /* background-color: black; */
+                /* line-height: 20px; */
+            }
+
+            ul li {
+                line-height: 25px;
+            }
+
+            .links > li > a {
+                color: white;
+            }
+
+            .fa {
+                padding: 20px;
+                font-size: 30px;
+                width: 50px;
+                text-align: center;
+                text-decoration: none;
+                margin: 5px 2px;
+                /* border-radius: 500%; */
+            }
+
+            #con li {
+                list-style: none;
+            }
+
+            #paymethod{
+                /* border: 1px solid lightgreen; */
+            }
+
+            #dfooter{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                /* flex-wrap: wrap; */
+                /* justify-content: space-between; */
+                /* border: 1px solid yellow; */
+            }
+
+            #newsletter{
+                display: flex;
+                /* flex-grow: 1; */
+                justify-content: flex-end;
+                /* padding: 5px; */
+                /* border: 1px solid red; */
+                /* text-align: left; */
+                color: white;
+                font-size: 20px;
+                /* text-indent: -500px; */
+            }
+
+            h3 {
+                margin-right: 5%;
+                padding-top: 2%;
+            }
+            
+            #subs {
+                font-size: large;
+                font-weight: bold;
+            }
+            #subs:hover {
+                background-color: #df4d85;
+                color: white;
+            }
+
+            .socials-wrap li{
+                display: flex;
+                /* padding: 20px; */
+            }
+            @media only screen and (min-width: 321px) and (max-width: 720px) {
+                #footer {
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                }
+
+                #dfooter > div {
+                    flex-grow: 1;
+                }
+                #paymethod {
+                    text-align: center;
+                }
+                #newsletter {
+                    display: flex;
+                    justify-content: space-around;
+                }
+            }
+            @media only screen and (min-width: 0px) and (max-width: 320px) {
+                #footer {
+                    grid-template-columns: repeat(1, 1fr);
+                    grid-template-rows: repeat(4, 1fr);
+                }
+
+                #dfooter > div {
+                    flex-grow: 1;
+                }
+                #paymethod {
+                    text-align: center;
+                }
+                #newsletter {
+                    display: flex;
+                    justify-content: space-around;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="pcontainer">
+
+            <!-- navbar section  -->
+            <div id="navbar">
+                <div id="nbox" class="image"><img src="https://www.beautybebo.com/pub/media/ads/ad-desktop.jpg" alt="image1"></div>
+                <div>
+                    <div id="middle">
+                        <div id="logo">
+                            <div><a href="BeboBeauty.html"><img src="https://www.beautybebo.com/pub/media/logo/default/beautybebo_1.png" alt="logo"></a></div>
+                        </div>
+                        <div id="search">
+                            <div id="left">
+                                <div>
+                                    <select id="select">
+                                        <option value="">All Categories</option>
+                                        <option value="MakeUp">MakeUp</option>
+                                        <option value="Hair">Hair</option>
+                                        <option value="Personal Care">Personal Care</option>
+                                        <option value="Skin">Skin</option>
+                                        <option value="Mom & Baby Care">Mom & Baby Care</option>
+                                        <option value="Ayurveda">Ayurveda</option>
+                                        <option value="Brands">Brands</option>
+                                    </select>
+                                </div>
+                            </div>
+                
+                            <di id="line"></di>
+                
+                            <div id="right">
+                                <input id="text" type="text" placeholder="Enter Your Search...">
+                                <button id="icon1"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                
+                        <div id="account">
+                            <button id="icon2"><i class="fas fa-heart"></i></button>
+                            <button id="icon3"><i class="fas fa-user-alt"></i></button>
+                            <div id="ac"><a href="myAccountSection2.0.1.html">My Account</a></div>
+                        </div>
+                    </div>
+                    <div id="nav">
+                        <div class="sidebar">
+                            <ul id="list3">
+                                <li class="active btn"><a href="#"><i class="fas fa-home"></i>HOME</a></li>
+                                <li class="btn"><a href="makeup.html">MAKEUP</a></li>
+                                <li class="btn"><a href="hair.html">HAIR</a></li>
+                                <li class="btn"><a href="makeup.html">PERSON CARE</a></li>
+                                <li class="btn"><a href="skin1.html">SKIN</a></li>
+                                <li class="btn"><a href="hair.html">MOM & BABY CARE</a></li>
+                                <li class="btn"><a href="skin.html">AYURVEDA</a></li>
+                                <li class="btn"><a href="makeup.html">BRANDS</a></li>
+                
+                            </ul>
+                        </div>
+                        <div class="mycart active btn">
+                            <a href="addcart.html"><i class="fas fa-shopping-cart"></i> MY CART</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- body section  -->
+            <div id="container">
+                <div>
+                    <h3>ORDER RETURN</h3>
+                    <h4>ORDERS AND RETURNS</h4>
+                </div>
+                <div id="box">
+                    <!-- <form action=""> -->
+                        <div>
+                            <label for="">Find Order By</label><br />
+                            <select name="" class="in" id="sele" required="true">
+                                <option value="Email">Email</option>
+                                <option value="ZIP Number">ZIP Number</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="">Order ID</label><br />
+                            <input class="in" type="number">
+                        </div>
+                        <div>
+                            <label for="">Billing Last Name</label><br />
+                            <input class="in" type="text">
+                        </div>
+                        <div>
+                            <label for="">Billing Last Name</label><br />
+                            <input class="in" type="email">
+                        </div>
+                        <div>
+                            <button id="sea">SEARCH</button>
+                        </div>
+                    <!-- </form> -->
+                </div>
+            </div>
+
+
+            <!-- footer section  -->
+            <div id="contu">
+                <div id="footer">
+                    <div id="con">
+                        <div>
+                            <h3>CONTACT INFO</h3>
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="phone"> (+91) 97990 30777</li>
+                                <li class="email">support@beautybebo.com</li>
+                                <li class="time">Open time: 10:00AM - 7:00PM</li>
+                            </ul>
+                        </div>
+                        <div class="socials-wrap">
+                            <div class="title-follow"></div>
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/BeautyBebo-339715696750230/" target="_blank"><i
+                                            class="fab fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/beautybeboofficial/" target="_blank"><i
+                                            class="fab fa-instagram"></i></a>
+                                </li>
+        
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h3>QUICK LINKS</h3>
+                        </div>
+                        <div>
+                            <ul class="links">
+                                <li><a href="">About us</a> </li>
+                                <li><a href="">Contact Us</a></li>
+                                <li><a href="tearmAndCondition.html">Terms & Conditions</a></li>
+                                <li><a href="privacyPolicy.html">Privacy Policy</a></li>
+                                <li><a href="">Return and Refund Policy</a></li>
+                                <li><a href="shippingPolicy.html">Shipping Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h3>CUSTOMER INFO</h3>
+                        </div>
+                        <div>
+                            <ul class="links">
+                                <li><a href="myAccountSection2.0.1.html">My Account</a> </li>
+                                <li><a href="trackYourOrder2.0.1.1.html">Track your Order</a></li>
+                                <li><a href="orderReturn2.0.1.html">Order Returns</a></li>
+                                <li><a href="WishList.html">Wishlist</a></li>
+                                <li><a href="news&Event2.0.1.html">News & Events</a></li>
+                                <li><a href="FAQ2.0.1.html">FAQ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h3>CATOGERIES</h3>
+                        </div>
+                        <div>
+                            <ul class="links">
+                                <li><a href="makeup.html">Makeup</a></li>
+                                <li><a href="skin1.html">Skin</a></li>
+                                <li><a href="hair.html">Hair</a></li>
+                                <li><a href="makeup.html">Personal Care</a></li>
+                                <li><a href="skin1.html">Mom &amp; Baby Care</a></li>
+                                <li><a href="makeup.html">Fragrance</a></li>
+                                <li><a href="hair.html">Ayurveda</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div id="dfooter">
+                    <div id="paymethod">
+                        <img src="https://www.beautybebo.com/pub/media/wysiwyg/payment.png" alt="">
+                    </div>
+                    <div id="newsletter">
+                        <h3>Signup for newsletter</h3>
+                        <input type="email" name="" id="email" placeholder="Enter your Email">
+                        <input type="submit" id="subs" value="Subscribe">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
+
+
+
+
+<script>
+    document.querySelector("#icon3 > i").addEventListener("click", attachAccountSection);
+    function attachAccountSection() {
+        window.location.href = "myAccountSection2.0.1.html";
+    }
+
+    document.querySelector("select").addEventListener("click", attachOption1);
+    function attachOption1() {
+        var select = document.querySelector("select").value;
+        if(select == "Hair") {
+            window.location.href = "hair.html";
+        }
+        if(select == "MakeUp") {
+            window.location.href = "makeup.html";
+        }
+        if(select == "Skin") {
+            window.location.href = "skin1.html";
+        }
+        if(select == "Personal Care") {
+            window.location.href = "makeup.html";
+        }
+        if(select == "Mom & Baby Care") {
+            window.location.href = "skin1.html";
+        }
+        if(select == "Ayurveda") {
+            window.location.href = "hair.html";
+        }
+        if(select == "Brands") {
+            window.location.href = "makeup.html";
+        }
+    }
+
+    document.querySelector("#icon1 > i").addEventListener("click", searchProduct);
+    function searchProduct() {
+        var searchBar = document.querySelector("#text").value;
+    
+        if(searchBar == "Hair" || searchBar == "hair" || searchBar == "HAIR") {
+            window.location.href = "hair.html";
+
+        }
+        else if(searchBar == "Makeup" || searchBar == "makeup" || searchBar == "MAKEUP") {
+            window.location.href = "makeup.html";
+        }
+        else if(searchBar == "Skin" || searchBar == "skin" || searchBar == "SKIN") {
+            window.location.href = "skin1.html";
+        }
+        else if(searchBar == "Personal Care" || searchBar == "personal care" || searchBar == "PERSONAL CARE") {
+            window.location.href = "makeup.html";
+        }
+        else if(searchBar == "Mom & Baby Care" || searchBar == "mom & baby care" || searchBar == "MOM & BABY CARE") {
+            window.location.href = "skin1.html";
+        }
+        else if(searchBar == "Ayurveda" || searchBar == "ayurveda" || searchBar == "AYURVEDA") {
+            window.location.href = "hair.html";
+        }
+        else if(searchBar == "Brands" || searchBar == "brands" || searchBar == "BRANDS") {
+            window.location.href = "makeup.html";
+        }
+        else {
+            alert("SORRY! Product is not available.");
+        }
+    }
+</script>
+
+
+

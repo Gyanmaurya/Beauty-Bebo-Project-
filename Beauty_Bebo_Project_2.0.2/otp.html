@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* *{
+            border: 1px solid red;
+        } */
+        ul{
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+        ul li{
+            border: 1px solid solid;
+        }
+
+        /* .container {
+        font-size: 23px;
+        background-color: blanchedalmond;
+        border: 2px solid grey;
+        padding: 34px;
+        margin: 4px;
+        text-align: center;
+    } */
+
+    #time {
+        font-weight: bold;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 30px;
+    }
+
+    #pay{
+        display: grid;
+        grid-template-columns:  2fr 3fr 1fr;
+    }
+
+    #otp{
+        width: 500px;
+    }
+
+    button{
+        padding: 10px;
+        margin: 10px;
+        background-color: blueviolet;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+    button:hover{
+        background-color: white;
+        color: blueviolet;
+        box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>
+                <img src="https://www.3dsecure1.icicibank.com/ACSWeb/EnrollWeb/ICICIBank/images/vbv_logo.jpg" alt="">
+            </li>
+            <li>
+                <span id="time"></span>
+            </li>
+            <li>
+                <img src="https://www.3dsecure1.icicibank.com/ACSWeb/EnrollWeb/ICICIBank/images/logo.gif" alt="">
+            </li>
+        </ul>
+        <hr>
+    </div>
+    <div id="pay">
+        <div id="detail">
+            <h4>Card Number</h4>
+            <h2>XXXX XXXX XXXX 3008</h2>
+            <br>
+            <h4>Merchant Name</h4>
+            <h2>BeautyBebo</h2>
+            <br>
+            <h4>Amount</h4>
+            <h2>5986943</h2>
+            <br>
+            <h4>Mobile No</h4>
+            <h2>X0XXXX1XX2</h2>
+        </div>
+        
+        <div id="otp">
+            <h5>An OTP (One Time Password) has been sent to your Registered Mobile Number.please authenticate the transaction using this OTP</h5>
+            <input type="password" id="otp">
+            <a href="">Resend OTP</a>
+            <p>OTP are Secret.DO NOT disclose it to anyone Bank NEVER ask for OTP</p>
+           <span><input type="checkbox" name="" id="">
+            <p>I have read the <a href="">Terms and Condition</a> and i accept the facility availble at the descretion of ICICI Bank.</p></span>
+            <button onclick="window.location.href='thank.html' "><a href="finalconfir.jpeg"></a> SUBMIT</button>
+            <button>CANCEL</button>
+            <p>This Page will automatically timeout after 180 Second</p>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+setInterval(updateTime, 1000);
+
+function updateTime() {
+    time.innerHTML = new Date();
+}
+
+</script>

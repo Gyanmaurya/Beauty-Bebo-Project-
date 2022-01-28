@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <title>My Account Section</title>
+        <style>
+            /* main container  */
+            #pcontainer {
+                /* border: 1px solid red; */
+                display: grid;
+                grid-gap: 5%;
+                grid-template-rows: 10% 65% 25%;
+                overflow: auto;
+            }
+
+
+            /* navbar css */
+            body{
+                font-family: "Helvetica Neue", sans-serif;
+            }   
+            #navbar {
+                /* border: 1px solid red; */
+                display: grid;
+                grid-template-rows: 40% 60%;
+                
+            }
+            #nbox > img {
+                width: 100%;
+            }
+            #nav{
+                background-color: #ee29a2;
+                text-align: center;
+            }
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            #nav{
+                display: flex;
+                
+            }
+            .sidebar{
+                display: flex;
+                justify-content: space-around;
+                width: 90%;
+            }
+            #nav ul{
+                width: 90%;
+                display: flex;
+                justify-content: space-around;
+                list-style-type: none;
+                color: #fff;
+            }
+            #nav ul li{
+                margin: 5px;
+                padding: 10px;
+            }
+            .mycart{
+                width: 10%;
+                margin: 5px;
+                padding: 10px;
+            }
+            #list3 > li > a{
+                color: #fff;
+                text-decoration: none;
+            }
+            #middle{
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+            }
+            #logo{
+                width: 25%;
+            }
+            #search{
+                display: flex;
+                width: 55%;
+                height: 35px;
+                margin-top:20px;
+                border :1px solid gray;
+                border-radius: 4px;
+            }
+            #search #right button{
+                border: 0px;
+                cursor: pointer;
+            }
+            #left{
+                display: flex;
+                width: 40%;
+                justify-content: space-around;
+                box-sizing: border-box;
+                padding: 9px;
+            }
+            #content{
+                color: rgb(124, 119, 119);
+                font-size: 14px;
+            }
+            #select{
+                color:rgb(128, 125, 125);
+                border: 0px;
+            }
+            #line{
+                height: 20px;
+                width: 0px;
+                border: 1px solid rgb(196, 187, 187);
+                margin-top: 8px;
+            }
+            #right{
+                display: flex;
+                width: 60%;
+                margin-left: 30px;
+                justify-content: space-between;
+                margin-top: 2px;
+            }
+            #text{
+                border: 0px;
+            }
+            #icon1{
+                width: 50px;
+                margin-top: -2px;
+                background-color: #ee29a2;
+                color: #fff;
+            }
+            #icon1 i{
+                width: 50px;
+                height: 100%;
+                font-size: 20px;
+                /* margin-left: 4px; */
+                margin-top:10px ;
+            }
+            #account{
+                display: flex;
+                width: 15%;
+                justify-content: space-around;
+                margin-top: 22px;
+            }
+            #icon2{
+                box-sizing: border-box;
+                padding: 5px;
+                height: 35px;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            #icon3{
+                box-sizing: border-box;
+                padding: 5px;
+                height: 35px;
+                border: 1px solid rgb(163, 153, 153);
+                font-size: 20px;
+                cursor: pointer;
+            }
+            #ac a{
+                font-size: 18px;
+                margin: 8px;
+                font-weight: 400;
+                color: black;
+            }
+            .active,#nav ul li:hover{
+                background-color: rgb(199, 32, 157);
+                border-radius: 5px;
+            }
+            #small{
+                display: none;
+                border: 1px solid blue;
+                width: 100%;
+            }
+            .flex3{
+                width: 85%;
+                margin: auto;
+                display: flex;
+                justify-content: space-evenly;
+                padding: 10px;
+            }
+            .flex3 img{
+                width: 30%;
+            } 
+            .flex3 span{
+                width:70%;
+            }
+            .input{
+                width: 80%;
+                height: 20px;
+                margin: auto;
+                border: 1px solid gray;
+                border-style:dotted;
+            }
+            .input input{
+                width: 80%;
+            }
+            .input #icon1{
+                width: 20%;
+            }
+
+            
+            /* body css */
+            #container {
+                /* border: 1px solid red; */
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                grid-gap: 2%;
+                grid-template-areas: 
+                "a1 a1 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2"
+                "a1 a1 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2"
+                "a1 a1 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2"
+                "a1 a1 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2";
+            }
+            #container > div:nth-child(1) {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                grid-area: a1;
+                padding-top: 2%;
+                margin-left: 15%;
+                /* border: 1px solid blue; */
+                display: grid;
+                grid-template-rows: repeat(3, 1fr);
+                grid-gap: 2%;
+                grid-template-areas: 
+                "b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1"
+                "b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2"
+                "b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2";
+            }
+            #pbox1 > div:nth-child(1) {
+                grid-area: b1;
+                /* border: 1px solid orange; */
+            }
+            #list > li {
+                padding: 2%;
+                list-style: none;
+            }
+            #list > li:hover, #list > li > a:hover {
+                background-color: rgb(248, 73, 102);
+                color: white;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            #pbox1 > div:nth-child(2) {
+                grid-area: b2;
+                /* border: 1px solid orange; */
+                background-image: url(https://www.beautybebo.com/pub/media/free-delivery.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 102%;
+            }
+            #container > div:nth-child(2) {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                grid-area: a2;
+                margin-right: 10%;
+                padding: 0 2%;
+                /* border: 1px solid blue; */
+            }
+            #pbox2 {
+                display: grid;
+                grid-template-rows: repeat(9, 1fr);
+                grid-gap: 2%;
+                grid-template-areas: 
+                "c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+                "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+                "c3 c3 c3 c3 c3 c3 c3 c3 c3 c3 c3 c3"
+                "c4 c4 c4 c4 c4 c4 c4 c4 c4 c4 c4 c4"
+                "c4 c4 c4 c4 c4 c4 c4 c4 c4 c4 c4 c4"
+                "c4 c4 c4 c4 c4 c4 c4 c4 c4 c4 c4 c4";
+            }
+            #pbox2 > div:nth-child(1) {
+                grid-area: c1;
+                padding-top: 2%;
+                border-bottom: 1px solid gray;
+            }
+            #pbox2 > div:nth-child(2) {
+                grid-area: c2;
+                /* border: 1px solid red; */
+            }
+            #cbox1, #cbox3 {
+                display: flex;
+                justify-content: space-between;
+                
+            }
+            #cbox1 > div, #cbox3 > div {
+                /* border: 1px solid black; */
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                flex-basis: 48%;
+                display: grid;
+                grid-template-rows: repeat(5, 1fr);
+                grid-template-areas: 
+                "d1 d1 d1 d1 d1 d1 d1 d1 d1 d1 d1 d1"
+                "d2 d2 d2 d2 d2 d2 d2 d2 d2 d2 d2 d2"
+                "d2 d2 d2 d2 d2 d2 d2 d2 d2 d2 d2 d2"
+                "d2 d2 d2 d2 d2 d2 d2 d2 d2 d2 d2 d2"
+                "d3 d3 d3 d3 d3 d3 d3 d3 d3 d3 d3 d3";
+            }
+            #cbox1 > div > div:nth-child(1), #cbox3 > div > div:nth-child(1) {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                grid-area: d1;
+                padding-top: 5%;
+                text-align: center;
+                /* border: 1px solid gray; */
+                background-color: rgb(240, 239, 239);
+                padding-left: 5%;
+                font-size: large;
+                font-weight: bold;
+            }
+            #cbox1 > div > div:nth-child(2), #cbox3 > div > div:nth-child(2) {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                grid-area: d2;
+                text-align: center;
+                padding: 5%;
+                /* border: 1px solid gray; */
+                padding-left: 5%;
+            }
+            #cbox1 > div > div:nth-child(3), #cbox3 > div > div:nth-child(3) {
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                grid-area: d3;
+                /* border: 1px solid gray; */
+                padding-left: 5%;
+            }
+            .button > button {
+                margin: 5% 5% 0 0;
+                /* font-size: large; */
+                font-weight: bold;
+                background-color: #df4d85;
+                color: white;
+                border: 0;
+                padding: 2%;
+            }
+            #pbox2 > div:nth-child(3) {
+                grid-area: c3;
+                border-bottom: 1px solid gray;
+                display: flex;
+            }
+            #cbox2 > div {
+                margin: 5% 2% 0;
+            }
+            #pbox2 > div:nth-child(4) {
+                grid-area: c4;
+                /* border: 1px solid red; */
+            }
+            /* medium screen */
+            @media only screen and (min-width: 321px) and (max-width: 720px) {
+                #container {
+                    grid-template-rows: repeat(2, 1fr);
+                    grid-template-areas: 
+                    "a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1"
+                    "a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2";
+                }
+                #container > div:nth-child(1) {
+                    margin-left: 0;
+                }
+                #container > div:nth-child(2) {
+                    margin-right: 0;
+                }
+                #cbox1 > div:nth-child(1) {
+                    margin-right: 3%;
+                }
+            }
+            /* small screen */
+            @media only screen and (min-width: 0px) and (max-width: 320px) {
+                #container {
+                    grid-template-rows: repeat(2, 1fr);
+                    grid-template-areas: 
+                    "a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1"
+                    "a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2";
+                }
+                #container > div:nth-child(1) {
+                    margin-left: 0;
+                }
+                #container > div:nth-child(2) {
+                    margin-right: 0;
+                }
+                #container > div {
+                    font-size: small;
+                }
+                #cbox1, #cbox3 {
+                    display: inline;
+                }
+                #cbox1 > div, #cbox3 > div {
+                    margin-bottom: 10%;
+                }
+            }
+
+
+
+
+            /* footer css */
+            #contu{
+                /* border: 1px solid red; */
+                display: grid;
+                background-color: black;
+                overflow: auto;
+            }
+            #footer {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                border: red;
+                color: white;
+                /* background-color: black; */
+                /* line-height: 20px; */
+            }
+
+            ul li {
+                line-height: 25px;
+            }
+
+            .links > li > a {
+                color: white;
+            }
+
+            .fa {
+                padding: 20px;
+                font-size: 30px;
+                width: 50px;
+                text-align: center;
+                text-decoration: none;
+                margin: 5px 2px;
+                /* border-radius: 500%; */
+            }
+
+            #con li {
+                list-style: none;
+            }
+
+            #paymethod{
+                /* border: 1px solid lightgreen; */
+            }
+
+            #dfooter{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                /* flex-wrap: wrap; */
+                /* justify-content: space-between; */
+                /* border: 1px solid yellow; */
+            }
+
+            #newsletter{
+                display: flex;
+                /* flex-grow: 1; */
+                justify-content: flex-end;
+                /* padding: 5px; */
+                /* border: 1px solid red; */
+                /* text-align: left; */
+                color: white;
+                font-size: 20px;
+                /* text-indent: -500px; */
+            }
+
+            h3 {
+                margin-right: 5%;
+                padding-top: 2%;
+            }
+            
+            #subs {
+                font-size: large;
+                font-weight: bold;
+            }
+            #subs:hover {
+                background-color: #df4d85;
+                color: white;
+            }
+
+            .socials-wrap li{
+                display: flex;
+                /* padding: 20px; */
+            }
+            @media only screen and (min-width: 321px) and (max-width: 720px) {
+                #footer {
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                }
+
+                #dfooter > div {
+                    flex-grow: 1;
+                }
+                #paymethod {
+                    text-align: center;
+                }
+                #newsletter {
+                    display: flex;
+                    justify-content: space-around;
+                }
+            }
+            @media only screen and (min-width: 0px) and (max-width: 320px) {
+                #footer {
+                    grid-template-columns: repeat(1, 1fr);
+                    grid-template-rows: repeat(4, 1fr);
+                }
+
+                #dfooter > div {
+                    flex-grow: 1;
+                }
+                #paymethod {
+                    text-align: center;
+                }
+                #newsletter {
+                    display: flex;
+                    justify-content: space-around;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="pcontainer">
+
+            <!-- navbar section  -->
+            <div id="navbar">
+                <div id="nbox" class="image"><img src="https://www.beautybebo.com/pub/media/ads/ad-desktop.jpg" alt="image1"></div>
+                <div>
+                    <div id="middle">
+                        <div id="logo">
+                            <div><a href="BeboBeauty.html"><img src="https://www.beautybebo.com/pub/media/logo/default/beautybebo_1.png" alt="logo"></a></div>
+                        </div>
+                        <div id="search">
+                            <div id="left">
+                                <div><select id="select">
+                                        <option value="">All Categories</option>
+                                        <option value="MakeUp">MakeUp</option>
+                                        <option value="Hair">Hair</option>
+                                        <option value="Personal Care">Personal Care</option>
+                                        <option value="Skin">Skin</option>
+                                        <option value="Mom & Baby Care">Mom & Baby Care</option>
+                                        <option value="Ayurveda">Ayurveda</option>
+                                        <option value="Brands">Brands</option>
+                                    </select></div>
+                            </div>
+                
+                            <di id="line"></di>
+                
+                            <div id="right">
+                                <input id="text" type="text" placeholder="Enter Your Search...">
+                                <button id="icon1"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                
+                        <div id="account">
+                            <button id="icon2"><i class="fas fa-heart"></i></button>
+                            <button id="icon3"><i class="fas fa-user-alt"></i></button>
+                            <div id="ac"><a href="myAccountSection2.0.1.html">My Account</a></div>
+                        </div>
+                    </div>
+                    <div id="nav">
+                        <div class="sidebar">
+                            <ul id="list3">
+                                <li class="active btn"><a href="#"><i class="fas fa-home"></i>HOME</a></li>
+                                <li class="btn"><a href="makeup.html">MAKEUP</a></li>
+                                <li class="btn"><a href="hair.html">HAIR</a></li>
+                                <li class="btn"><a href="makeup.html">PERSON CARE</a></li>
+                                <li class="btn"><a href="skin1.html">SKIN</a></li>
+                                <li class="btn"><a href="hair.html">MOM & BABY CARE</a></li>
+                                <li class="btn"><a href="skin1.html">AYURVEDA</a></li>
+                                <li class="btn"><a href="makeup.html">BRANDS</a></li>
+                
+                            </ul>
+                        </div>
+                        <div class="mycart active btn">
+                            <a href="addcart.html"><i class="fas fa-shopping-cart"></i> MY CART</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- body section  -->
+            <div id="container">
+                <div id="pbox1">
+                    <div>
+                        <ul id="list">
+                            <li><strong><a href="myAccountSection2.0.1.html">My Account</a></strong></li>
+                            <li><strong><a href="myOrder2.0.1.html">My Orders</a></strong></li>
+                            <li><strong><a href="WishList.html">My Wish List</a></strong></li>
+                            <li><hr /></li>
+                            <li><strong><a href="#">Address Book</a></strong></li>
+                            <li><strong><a href="#">Account Information</a></strong></li>
+                            <li><hr /></li>
+                            <li><strong><a href="#">My Product Review</a></strong></li>
+                            <li><strong><a href="#">Newsletter Subscription</a></strong></li>
+                        </ul>
+                    </div>
+                    <div></div>
+                </div>
+                <div id="pbox2">
+                    <div>
+                        <h1>My Account</h1>
+                        <h2>Account Information</h2>
+                    </div>
+                    <div id="cbox1">
+                        <div>
+                            <div>
+                                <p>Contact Information</p>
+                            </div>
+                            <div>
+                                <p contenteditable="true">Girija Shankar Mahal</pable=>
+                                <p contenteditable="true">girija_fw15_047@masai.school</p>
+                            </div>
+                            <div class="button">
+                                <button>EDIT</button>
+                                <button>CHANGE PASSWORD</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>Newsletters</p>
+                            </div>
+                            <div>
+                                <p contenteditable="true">You are subscribed to "General Subscription".</p>
+                            </div>
+                            <div class="button">
+                                <button>EDIT</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cbox2">
+                        <div>
+                            <h3>ADRESS BOOK</h3>
+                        </div>
+                        <div>
+                            <h4>Manage Addresses</h4>
+                        </div>
+                    </div>
+                    <div id="cbox3">
+                        <div>
+                            <div>
+                                <p>Default Billing Address</p>
+                            </div>
+                            <div>
+                                <p contenteditable="true">have not set a default billing address.</p>
+                            </div>
+                            <div class="button">
+                                <button>EDIT ADDRESS</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>Default Shipping Address</p>
+                            </div>
+                            <div>
+                                <p contenteditable="true">You have not set a default shipping address.</p>
+                            </div>
+                            <div class="button">
+                                <button>EDIT ADDRESS</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- footer section  -->
+            <div id="contu">
+                <div id="footer">
+                    <div id="con">
+                        <div>
+                            <h3>CONTACT INFO</h3>
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="phone"> (+91) 97990 30777</li>
+                                <li class="email">support@beautybebo.com</li>
+                                <li class="time">Open time: 10:00AM - 7:00PM</li>
+                            </ul>
+                        </div>
+                        <div class="socials-wrap">
+                            <div class="title-follow"></div>
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/BeautyBebo-339715696750230/" target="_blank"><i
+                                            class="fab fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/beautybeboofficial/" target="_blank"><i
+                                            class="fab fa-instagram"></i></a>
+                                </li>
+        
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h3>QUICK LINKS</h3>
+                        </div>
+                        <div>
+                            <ul class="links">
+                                <li><a href="">About us</a> </li>
+                                <li><a href="">Contact Us</a></li>
+                                <li><a href="tearmAndCondition.html">Terms & Conditions</a></li>
+                                <li><a href="privacyPolicy.html">Privacy Policy</a></li>
+                                <li><a href="">Return and Refund Policy</a></li>
+                                <li><a href="shippingPolicy.html">Shipping Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h3>CUSTOMER INFO</h3>
+                        </div>
+                        <div>
+                            <ul class="links">
+                                <li><a href="myAccountSection2.0.1.html">My Account</a> </li>
+                                <li><a href="trackYourOrder2.0.1.html">Track your Order</a></li>
+                                <li><a href="orderReturn2.0.1.html">Order Returns</a></li>
+                                <li><a href="WishList.html">Wishlist</a></li>
+                                <li><a href="news&Event2.0.1.html">News & Events</a></li>
+                                <li><a href="FAQ2.0.1.html">FAQ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h3>CATOGERIES</h3>
+                        </div>
+                        <div>
+                            <ul class="links">
+                                <li><a href="makeup.html">Makeup</a></li>
+                                <li><a href="skin1.html">Skin</a></li>
+                                <li><a href="hair.html">Hair</a></li>
+                                <li><a href="skin1.html">Personal Care</a></li>
+                                <li><a href="makeup.html">Mom &amp; Baby Care</a></li>
+                                <li><a href="skin1.html">Fragrance</a></li>
+                                <li><a href="hair.html">Ayurveda</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div id="dfooter">
+                    <div id="paymethod">
+                        <img src="https://www.beautybebo.com/pub/media/wysiwyg/payment.png" alt="">
+                    </div>
+                    <div id="newsletter">
+                        <h3>Signup for newsletter</h3>
+                        <input type="email" name="" id="email" placeholder="Enter your Email">
+                        <input type="submit" id="subs" value="Subscribe">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
+
+
+
+
+<script>
+    document.querySelector("#icon3 > i").addEventListener("click", attachAccountSection);
+    function attachAccountSection() {
+        window.location.href = "myAccountSection2.0.1.html";
+    }
+
+    document.querySelector("select").addEventListener("click", attachOption1);
+    function attachOption1() {
+        var select = document.querySelector("select").value;
+        if(select == "Hair") {
+            window.location.href = "hair.html";
+        }
+        if(select == "MakeUp") {
+            window.location.href = "makeup.html";
+        }
+        if(select == "Skin") {
+            window.location.href = "skin1.html";
+        }
+        if(select == "Personal Care") {
+            window.location.href = "makeup.html";
+        }
+        if(select == "Mom & Baby Care") {
+            window.location.href = "skin1.html";
+        }
+        if(select == "Ayurveda") {
+            window.location.href = "hair.html";
+        }
+        if(select == "Brands") {
+            window.location.href = "makeup.html";
+        }
+    }
+
+    document.querySelector("#icon1 > i").addEventListener("click", searchProduct);
+    function searchProduct() {
+        var searchBar = document.querySelector("#text").value;
+    
+        if(searchBar == "Hair" || searchBar == "hair" || searchBar == "HAIR") {
+            window.location.href = "hair.html";
+
+        }
+        else if(searchBar == "Makeup" || searchBar == "makeup" || searchBar == "MAKEUP") {
+            window.location.href = "makeup.html";
+        }
+        else if(searchBar == "Skin" || searchBar == "skin" || searchBar == "SKIN") {
+            window.location.href = "skin1.html";
+        }
+        else if(searchBar == "Personal Care" || searchBar == "personal care" || searchBar == "PERSONAL CARE") {
+            window.location.href = "makeup.html";
+        }
+        else if(searchBar == "Mom & Baby Care" || searchBar == "mom & baby care" || searchBar == "MOM & BABY CARE") {
+            window.location.href = "skin1.html";
+        }
+        else if(searchBar == "Ayurveda" || searchBar == "ayurveda" || searchBar == "AYURVEDA") {
+            window.location.href = "hair.html";
+        }
+        else if(searchBar == "Brands" || searchBar == "brands" || searchBar == "BRANDS") {
+            window.location.href = "makeup.html";
+        }
+        else {
+            alert("SORRY! Product is not available.");
+        }
+    }
+</script>
