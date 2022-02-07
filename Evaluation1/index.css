@@ -1,0 +1,33 @@
+#Nav {
+  width: 100%;
+  background-color: aqua;
+  display: flex;
+  justify-content: end;
+}
+#Nav > button {
+  padding: 10px;
+  margin-left: 10px;
+  background: none;
+  border: 0px;
+}
+#Nav > div {
+  text-align: center;
+  padding: 10px;
+}
+#Nav > button:hover {
+  background-color: brown;
+}
+#Items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 50px;
+}
+#Items > div {
+  box-shadow: darkgray;
+  justify-content: center;
+  text-align: center;
+}
+#Items > div > img {
+  width: 100%;
+}
